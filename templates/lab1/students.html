@@ -1,0 +1,24 @@
+{% extends 'lab1/base.html' %}
+
+{% block title_block %}
+<h1>All students</h1>
+{% endblock %}
+
+{% block main_block %}
+<table border="1">
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Age</th>
+    <th>First name</th>
+    <th>Graduated</th>
+    {% for st in students %}
+    <tr>
+        <td> <a href="/django/student/{{st.id}}"> {{ st.fname }}</a></td>
+        <td>{{ st.lname }}</td>
+        <td>{{ st.age }}</td>
+        <td>{{ st.student_track }}</td>
+        <td>{{ st.is_graduated }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

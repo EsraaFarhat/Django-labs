@@ -1,0 +1,15 @@
+{% extends 'lab1/base.html' %}
+{% load static %}
+{% block title_block %}
+<h1>Welcome, {{student.fname}} {{student.lname}} </h1>
+<br>
+<a href="/django/all"><img src="{% static 'img/1.jpg' %}" width="70" height="60"></a>
+<br>
+{% endblock %}
+
+{% block main_block %}
+<h3><b>First name: </b>{{student.fname}}</h3>
+<h3><b>Last name: </b>{{student.lname}}</h3>
+<h3><b>Age: </b>{{student.age}}</h3>
+<h3><b>Track: </b>{{student.student_track}}</h3>
+{% endblock %}
