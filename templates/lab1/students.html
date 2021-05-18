@@ -2,15 +2,17 @@
 
 {% block title_block %}
 <h1>All students</h1>
+<a class="btn btn-success" href="/django/new">Add new student</a>
 {% endblock %}
 
 {% block main_block %}
-<table border="1">
+<table class="table">
     <th>First name</th>
     <th>Last name</th>
     <th>Age</th>
     <th>First name</th>
     <th>Graduated</th>
+    <th colspan="2">Actions</th>
     {% for st in students %}
     <tr>
         <td> <a href="/django/student/{{st.id}}"> {{ st.fname }}</a></td>
@@ -18,6 +20,8 @@
         <td>{{ st.age }}</td>
         <td>{{ st.student_track }}</td>
         <td>{{ st.is_graduated }}</td>
+        <td><a href="/django/edit/{{st.id}}">Edit</a></td>
+        <td><a href="/django/delete/{{st.id}}">Delete</a></td>
     </tr>
     {% endfor %}
 </table>
